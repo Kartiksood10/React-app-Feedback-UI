@@ -32,6 +32,11 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false);
   };
 
+  //METHODS:
+  // POST - ADD DATA TO JSON SERVER
+  //DELETE - DELETE DATA FROM JSON SERVER
+  // PUT - UPDATE DATA TO JSON SERVER
+
   // method POST is to add a new feedback into backend database
   // .stringify converts javascript value to JSON string
   const addFeedback = async (newFeedback) => {
