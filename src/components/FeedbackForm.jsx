@@ -16,6 +16,7 @@ function FeedbackForm() {
   // second parameter is dependency array based on which components are rendered
   // if dependency array changes useEffect takes place
   // when we press edit, we want the button-enabled,text and rating of selected feedback
+  // if condition is to check if after pressing edit user has actually edited the feedback or not
   useEffect(() => {
     if(feedbackEdit.edit === true){
       setBtnDisabled(false)
@@ -43,6 +44,7 @@ function FeedbackForm() {
     setText(e.target.value) // fetching value of input text using e.target.value
   }
 
+  // when submit button is clicked in form
   const handleSubmit = (e) =>{
 
     e.preventDefault()
@@ -54,7 +56,7 @@ function FeedbackForm() {
             rating: rating,
         }
 
-        // calling addFeedback from FeedbackContext
+        // calling addFeedback, updateFeedback from FeedbackContext
 
         if(feedbackEdit.edit === true){
           updateFeedback(feedbackEdit.item.id, newFeedback)

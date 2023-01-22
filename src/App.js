@@ -17,9 +17,11 @@ function App() {
     // empty <> are used as each jsx element must have a parent element
     // all functions, props inside FeedbackProvider can be accessed globally by any component
     <FeedbackProvider>
+      {/* Entire App.js should be under Router */}
       <Router>
         <Header />
         <div className="container">
+          {/* For router dom version 6+ we need to assign Routes inside which we define each route */}
           <Routes>
             <Route // when path is '/' render the feedback UI
               exact

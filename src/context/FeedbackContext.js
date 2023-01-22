@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); //to bring in a spinner gif while loading
   const [feedback, setFeedback] = useState([]);
 
   // selecting the text in the feedback we want to edit using useState
@@ -37,6 +37,8 @@ export const FeedbackProvider = ({ children }) => {
   //DELETE - DELETE DATA FROM JSON SERVER
   // PUT - UPDATE DATA TO JSON SERVER
 
+  //JSON - Javascript object notation - used for transfer of data from server to webpage in js object syntax
+
   // method POST is to add a new feedback into backend database
   // .stringify converts javascript value to JSON string
   const addFeedback = async (newFeedback) => {
@@ -50,8 +52,6 @@ export const FeedbackProvider = ({ children }) => {
 
     const data = await response.json();
 
-    // uuid gives a unique id to each rating
-    //newFeedback.id = uuidv4();
     // ... adds newFeedback element to existing feedback array
     // newFeedback is to be added in the start of the array so it is placed before the ...
     //setFeedback([newFeedback, ...feedback]);
@@ -94,6 +94,8 @@ export const FeedbackProvider = ({ children }) => {
 
   return (
     // all props and functions stored in .provider value to be used globally in other files
+    // first three values are props, next 4 are functions
+    // {children - all components inside FeedbackProvider inside App.js}
     <FeedbackContext.Provider
       value={{
         feedback,
