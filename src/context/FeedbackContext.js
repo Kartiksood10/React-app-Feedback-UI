@@ -97,6 +97,7 @@ export const FeedbackProvider = ({ children }) => {
     // all props and functions stored in .provider value to be used globally in other files
     // first three values are props, next 4 are functions
     // {children - all components inside FeedbackProvider inside App.js}
+    //CHANGES TEST
     <FeedbackContext.Provider
       value={{
         feedback,
