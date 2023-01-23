@@ -7,17 +7,17 @@ function FeedbackStats() {
   const{feedback} = useContext(FeedbackContext)
 // Calculate avg rating
 //reduce() reduces an array to a single value by executing func on each val of array from left to right
-  let average = feedback.reduce((acc,cur) => {
-    return acc + cur.rating
-  }, 0) / feedback.length  
+  // let average = feedback.reduce((acc,cur) => {
+  //   return acc + cur.rating
+  // }, 0) / feedback.length  
+  console.log(feedback);
+  let sum = feedback[0].rating
+  for(let i=1;i<feedback.length;i++){
 
-//   let sum = feedback[0]
-//   for(let i=1;i<feedback.length;i++){
+    sum = sum + feedback[i].rating
+  }
 
-//     sum = sum + feedback[i]
-//   }
-
-//   let average = sum/feedback.length
+  let average = sum/feedback.length
 
   //one decimal place except for 9.0, 8.0 etc
   average = average.toFixed(1).replace(/[.,]0$/, '')
